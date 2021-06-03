@@ -15,6 +15,9 @@ const PORT = process.env.PORT || 5000
 
 console.log('port is -> ', PORT)
 
+server.get('*', (req, res) => {
+  res.status(200).json({ message: 'Server working' })
+})
 
 server.use((req, res) => {
   res.status(404).json({ message: 'not found sorry' })
