@@ -15,6 +15,10 @@ const PORT = process.env.PORT || 5000
 
 console.log('port is -> ', PORT)
 
+server.get('/api/test', (req, res) => {
+  res.status(200).json({ message: 'Test working' })
+})
+
 server.get('*', (req, res) => {
   res.status(200).json({ message: 'Server working' })
 })
